@@ -11,7 +11,10 @@ public class MyClass {
         System.out.println(sam.name); // Sam
 
         // 객체생성후에 개별적으로 필드를 수정할 수 있음
-        tom.name = "";
+        // 직접적인 필드의 수정은 위험함
+        // 예) 숫자가 포함된 이름, 또는 음수인 나이등등
+        // 메서드를 이용한 수정으로 이 문제를 막을 수 있음 (=클래스의 은닉)
+        tom.name = "Tom";
         tom.age = 21;
         System.out.println(tom.name + " " + tom.age); // Tom 21
 
