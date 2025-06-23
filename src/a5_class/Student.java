@@ -46,6 +46,24 @@ public class Student {
         double average = sum / 3;
         return average;
     }
+    public String setName(String newName) {
+        /*
+        중요!!
+        클래스의 필드를 직접 수정하면 각 필드의 특징을 거스르는 값이 저장될 수 있음
+        예를 들어 숫자가 포함된 이름과 같이 문법적으로는 문제없으나 이름에는 적절하지 못함
+        그러므로 필드에 직접 수정하는 방식을 막고 메서드를 통한 수정방식을 선호함
+        ==> 이것을 클래스의 은닉화(=Capsulization)이라고 함!!!
+        * */
+//        if (문자열안에 숫자가 포함되어있다면) {
+//            System.out.println("에러발생. 이름안에 숫자가 있습니다.");
+//            // 예외발생~
+//        } else if (빈문자열이라면) {
+//            System.out.println("에러발생. 이름이 없음.");
+//            // 예외발생~
+//        }
+        this.name = newName;
+        return this.name;
+    }
 }
 /*
 <클래스>

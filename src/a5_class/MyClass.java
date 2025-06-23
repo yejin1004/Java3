@@ -11,7 +11,7 @@ public class MyClass {
         System.out.println(sam.name); // Sam
 
         // 객체생성후에 개별적으로 필드를 수정할 수 있음
-        tom.name = "Tom";
+        tom.name = "";
         tom.age = 21;
         System.out.println(tom.name + " " + tom.age); // Tom 21
 
