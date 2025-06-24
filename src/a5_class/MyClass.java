@@ -25,5 +25,19 @@ public class MyClass {
         System.out.println(averageScoreSam); // 90.0
         // 중요! 
         // Sam의 성적을 알고싶으면 Sam의 정보를 담고있는 객체의 메서드를 호출해야함
+
+        User kim = new User("Kim", "kim12@gmail.com", "1234");
+        System.out.println(kim.password); // 1234
+        String newPassword = kim.setPassword("qwer");
+        System.out.println(newPassword); // qwer
+        System.out.println(kim.password); // qwer
     }
 }
+
+
+
+
+
+
+
+
