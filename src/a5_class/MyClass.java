@@ -31,6 +31,14 @@ public class MyClass {
         String newPassword = kim.setPassword("qwer");
         System.out.println(newPassword); // qwer
         System.out.println(kim.password); // qwer
+
+        Product com = new Product("nb001", "Macbook Pro", 10000, 100);
+        // 가격을 내리려면
+        double newPrice = com.setPrice(9000);
+        // 많이 팔려서 재고수량을 줄이려면
+        int newStock = com.setStock(70);
+        System.out.println(com.price); // 9000.0
+        System.out.println(com.stock); // 70
     }
 }
 
