@@ -54,6 +54,24 @@ public class MyClass {
         System.out.println(order1.user.username); // kim
         // 주문한 제품이 재고가 있는지 확인하려면??
         System.out.println(order1.product.stock); // 70
+
+        /* 중요!!
+        주문클래스의 필드인 주문자와 주문제품은 User와 Product 클래스에
+        강한 의존성을 가지고 있음.
+        주문자와 주문제품은 반드시 User 클래스와 Product 클래스의 객체여야 함.
+        이런 관계를 가지고 있는 필드의 경우에는 클래스객체 자체를 필드로 가지도록
+        주문클래스를 설계할 필요가 있음
+        public class Order {
+            User user; // 주문자
+            Product product; // 주문제품
+        }
+         */
+
+        // 지역변수의 초기화
+        int a; // main 메서드의 지역변수 a
+        // System.out.println(a); // 에러. 스택변수는 초기화해야만 읽을 수 있음
+        a = 10;
+        System.out.println(a); // 10
     }
 }
 
