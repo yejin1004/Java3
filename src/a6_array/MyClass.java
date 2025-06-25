@@ -8,7 +8,12 @@ public class MyClass {
         double perimeter = r.getPerimeter();
         System.out.println("둘레는 " + perimeter); // 10
         // 크기 재설정
-        r.resize(new double[] {4,5}); 
+//        double[] array = new double[2];
+//        array[0] = 4;
+//        array[1] = 5;
+//        r.resize(array);
+//        double[] array2 = new double[] {4,5};
+        r.resize(new double[] {4,5});
         area = r.getArea();
         System.out.println("면적은 " + area); // 20
         perimeter = r.getPerimeter();
