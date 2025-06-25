@@ -8,7 +8,7 @@ public class Test {
         System.out.println(a.arraySum(data1));
         System.out.println(a.arraySum(data2));
         System.out.println(a.arraySum(new int[] {1, 2, 3}));
-        System.out.println(a.arraySum({1, 2, 3}));
+//        System.out.println(a.arraySum({1, 2, 3}));
     }
 }
 class A {
