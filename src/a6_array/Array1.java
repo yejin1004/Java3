@@ -51,6 +51,7 @@ public class Array1 {
         students[1] = new Student("tom",21,"서울","남",90,80,70);
         students[2] = new Student("Laura",20,"부산","여",100,90,80);
         System.out.println(Arrays.toString(students));
+        // 클래스안에 toString 메서드를 오버라이드해야만 출력이 정상적으로 나옴.
     }
 }
 
