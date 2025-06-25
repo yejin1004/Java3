@@ -46,6 +46,7 @@ class BBB {
         this.m2 = m2;
     }
     void print() {
+        // this(); // this 메서드는 반드시 생성자안에서만 호출 가능
         System.out.println(m1 + " " + m2 + " " + m3 + " " + m4);
     }
 }
