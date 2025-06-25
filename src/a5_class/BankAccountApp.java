@@ -26,5 +26,12 @@ public class BankAccountApp {
         }else {
             System.out.println("출금실패");
         }
+        // 예외상황 (잔액보다 많은 출금)
+        if (bankObject.withdraw(20000)) {
+            System.out.println("출금성공");
+            System.out.println(bankObject);
+        }else {
+            System.out.println("출금실패");
+        }
     }
 }
