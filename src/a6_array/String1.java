@@ -39,6 +39,16 @@ public class String1 {
         System.out.println(bb); // 5.5 숫자
         boolean cc = Boolean.parseBoolean(str3);
         System.out.println(cc); // true
+
+        // valueOf 를 이용한 타입변환.
+        // 래퍼클래스의 생성자를 대신함.
+        // 메서드의 반환 결과는 기본자료형이 아닌 래퍼클래스!!!
+        Integer aaa = Integer.valueOf(str1);
+        System.out.println(aaa); // 10
+        Double bbb = Double.valueOf(str2);
+        System.out.println(bbb); // 5.5
+        // 일반적인 계산 목적으로 타입변환을 할때는 사용X
+        // 컬렉션(리스트,세트,맵,트리..)에 사용할 목적으로 주로 사용O
     }
 }
 
