@@ -17,5 +17,35 @@ public class String1 {
         boolean c = true;
         String str3 = Boolean.toString(c);
         System.out.println(str3); // true 문자
+        // 기본자료형의 래퍼(Wrapper)클래스
+        // Byte,Short,Integer,Long,Float,Double,Character,Boolean
+        // 모든 기본자료형과 1대1로 대응됨
+        // 불변성을 가짐(수정안됨)
+        // 생성자를 사용하지 않고 대신 valueOf() 메서드를 사용하여 객체 생성
+        // <중요> 래퍼클래스를 왜 사용하나?
+        // 1) 자료구조중에 높은 성능을 나타내는 컬렉션(리스트,세트,맵,트리..)들은
+        //    모두 객체를 저장하도록 설계되어있기 때문에 기본자료형을 다루기 어려움
+        //    기본자료형을 래퍼클래스로 감싸서 자료구조에 사용함
+        // 2) 유용한 메서드를 제공 : 타입변환, 비교연산등등 유용한 메서드를 제공
+        //    별도의 외부메서드없이 내부에 포함된 유용한 메서드를 쉽게 사용 가능
+        // 3) 제네릭(Generics) : class MyClass<T> { }
+        //    T를 제네릭이라 부르고 T는 모든 객체를 대표하는 키워드임
+        //    T자리에 어떤 클래스도 사용될 수 있도록 다양성을 추가한 문법
+
+        // 문자열 -> 숫자
+        int aa = Integer.parseInt(str1);
+        System.out.println(aa); // 10 숫자
+        double bb = Double.parseDouble(str2);
+        System.out.println(bb); // 5.5 숫자
+        boolean cc = Boolean.parseBoolean(str3);
+        System.out.println(cc); // true
     }
 }
+
+
+
+
+
+
+
+
