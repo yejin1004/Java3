@@ -30,6 +30,27 @@ public class String3 {
         String sample = "abc/def-ghi jkl";
         String[] strArray = sample.split(" |-|/");
         System.out.println(Arrays.toString(strArray)); //[abc, def, ghi, jkl]
+        // 정규표현식 (regex = regular expression)
+        // 특정패턴을 가진 문자열을 찾거나 조작하기 위한 문자열
+        // 주로 문자열 검색, 추출, 치환과 같은 작업에 사용됨
+        // 정규표현식을 통해 패턴을 효율적으로 찾고 원하는 부분을 추출 변경 가능함.
 
+        // 이메일주소를 검증하는 정규표현식
+        // ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$
+        String email1 = "text@example.com";
+        boolean isValid = email1.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$");
+        System.out.println(isValid); // true
+        String email2 = "textsdfkjdsak";
+        isValid = email2.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$");
+        System.out.println(isValid); // false
+
+        // 한국휴대폰 유효성검사
+        // ^01([0|1|6|7|8|9])-\\d{3,4}-\\d{4}$
+        // 숫자로만 이루어진 문자열 검사
+        // ^\\d+$
+        // 알파벳 대소문자 및 숫자로만 이루어진 ID (6~12자리)
+        // ^[a-zA-Z0-9]{6,12}$
+        // 날짜 형식 검사 (YYYY-MM-DD)
+        // ^\\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$
     }
 }
