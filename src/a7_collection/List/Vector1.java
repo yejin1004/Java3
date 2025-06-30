@@ -7,6 +7,10 @@ import java.util.Vector;
 // List인터페이스의 두번째 구현클래스 List.Vector 사용법
 // 멀티쓰레드 환경에 적합한 동기화기능을 지원한다!!
 // 멀티쓰레드를 수행하는데 쓰인다면 Vector를 사용해야함
+// ArrayList : 비동기화(동시에 하나의 element를 접근할때 락을 걸 수 없음)
+//             락을 걸 수 없는 대신 매우 빠름
+// Vector : 동기화 지원 (락 기능으로 안전하게 element에 접근 가능)
+//          추가적인 락기능을 가지므로 상대적으로 느리고 용량이 많이 필요함
 public class Vector1 {
     public static void main(String[] args) {
         List<Integer> vector1 = new Vector<>();
