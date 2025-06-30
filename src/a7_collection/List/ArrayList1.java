@@ -44,5 +44,7 @@ public class ArrayList1 {
         List<String> stringList = new ArrayList<>(Arrays.asList("A","B","C","D"));
         System.out.println(stringList.size()); // 4
         System.out.println(stringList); // [A, B, C, D]
+        stringList.add("E");
+        System.out.println(stringList); // [A, B, C, D, E]
     }
 }
