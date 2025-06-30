@@ -49,5 +49,49 @@ public class ArrayList3 {
         aList3.remove(0);
         System.out.println(aList3); // [20]
 
+        // #7. remove(Object obj) (해당 오브젝트 삭제)
+        System.out.println("#7");
+        aList3.add(0, 10); // [10, 20]
+        System.out.println(aList3);
+        aList3.remove(Integer.valueOf(10));
+        System.out.println(aList3); // [20]
+
+        // #8. clear (모두 삭제)
+        System.out.println("#8");
+        aList3.clear();
+        System.out.println(aList3); // []
+
+        // #9. isEmpty (배열이 비어있는지 확인. 비었으면 true)
+        System.out.println("#9");
+        System.out.println(aList3.isEmpty()); // true
+
+        // #10. size (리스트의 전체 갯수를 리턴)
+        System.out.println("#10");
+        System.out.println(aList2.size()); // 8
+
+        // #11. get (특정 인덱스의 요소를 읽음)
+        // <주의> 배열에서는 array[index] 처럼 읽지만 컬렉션에서는 안됨
+        // aList2[index] => 오류
+        System.out.println("#11");
+        System.out.println(aList2.get(0)); // 1
+        System.out.println(aList2.get(1)); // 100
+        System.out.println(aList2.get(2)); // 101
+
+        // #12. toArray (리스트 -> 배열)
+        System.out.println("#12");
+        System.out.println(aList2); // [1, 100, 101, 2, 3, 6, 4, 5]
+        // int[] array = aList2.toArray(); // 오류
+        // 원인은 왼쪽은 int[], 오른쪽은 Object[] (toArray()반환형 Object[])
+        Object[] objArray = aList2.toArray(); // 가능
+        Integer[] intArray = (Integer[]) aList2.toArray(); // 가능
+        
     }
 }
+
+
+
+
+
+
+
+
