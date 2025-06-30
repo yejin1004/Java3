@@ -10,7 +10,11 @@ public class Example4 {
     }
     public static int getMax(int[] numbers) {
         int max = 0;
-        // 여기 코드 입력
+        for (int i=0; i< numbers.length; i++) {
+            if (max < numbers[i]) {
+                max = numbers[i];
+            }
+        }
         return max;
     }
 }

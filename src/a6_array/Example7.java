@@ -17,6 +17,14 @@ public class Example7 {
         
         // 여기에 코드를 작성하여 2차원 배열의 합과 평균을 계산하고
         // total과 average에 각각 입력하여 아래 코드로 출력되게 하세요
+        int count = 0;
+        for (int i=0; i< arr.length; i++) {
+            for (int j=0; j<arr[i].length; j++) {
+                total = total + arr[i][j];
+                count = count + 1;
+            }
+        }
+        average = (double) total / count;
         
         System.out.println("total="+total); // 325
         System.out.println("average="+average); // 16.25
