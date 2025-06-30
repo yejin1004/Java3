@@ -2,6 +2,7 @@ package a7_collection.List;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class ArrayList3 {
@@ -83,8 +84,36 @@ public class ArrayList3 {
         // int[] array = aList2.toArray(); // 오류
         // 원인은 왼쪽은 int[], 오른쪽은 Object[] (toArray()반환형 Object[])
         Object[] objArray = aList2.toArray(); // 가능
-        Integer[] intArray = (Integer[]) aList2.toArray(); // 가능
-        
+        System.out.println(Arrays.toString(objArray));
+        // Integer[] intArray = (Integer[]) aList2.toArray(); // 오류
+        // ClassCastException(Object[] -> Integer[] 다운캐스팅하면서 발생)
+
+        // 어떻게하면 Integer[]로 변환할 수 있을까??
+        Integer[] intArray = aList2.toArray(new Integer[0]); // 가능
+        Integer[] intArray2 = aList2.toArray(new Integer[aList2.size()]); // 가능. 잘 안쓰임
+        System.out.println(Arrays.toString(intArray));
+        System.out.println(Arrays.toString(intArray2));
+        // new Integer[0]는 0의 크기를 가진 배열을 만드는게 아니라
+        // aList2.size()와 같은 배열크기로 만들라는 약속!
+
+        // #13. contains 탐색
+        System.out.println("#13");
+        boolean exist = aList2.contains(Integer.valueOf(100));
+        System.out.println(exist ? "탐색성공" : "탐색실패"); // 탐색성공
+
+        // #14. iterator 컬렉션 요소를 순차적으로 탐색
+        System.out.println("#14");
+        Iterator<Integer> iterator = aList2.iterator();
+        // 탐색자는 다음 요소가 존재하면 true, 끝에 도달했으면 false리턴
+        // 탐색자는 일종의 자료구조상의 로봇(처음부터 끝까지 탐색하는 기능)
+        // 자동으로 끝을 알려주기때문에 while 문에서도 안전함(무한루프X)
+        while(iterator.hasNext()) {
+            Integer a = iterator.next();
+            // 현재 탐색자가 위치한 요소(객체)를 반환하고 자동으로 다음으로 넘어감
+            // 그러므로 따로 증감식이 필요없음
+            System.out.print(a);
+        }
+        System.out.println();
     }
 }
 
