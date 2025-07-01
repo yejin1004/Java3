@@ -17,10 +17,11 @@ public class HashSet1 {
          */
         Set<String> hset1 = new HashSet<>();
         // #1 add
-        hset1.add("A");
+        boolean b1 = hset1.add("A");
         hset1.add("B");
         hset1.add("C");
-        hset1.add("A"); // 중복저장 안함!!!
+        boolean b2 = hset1.add("A"); // 중복저장 안함! (중복이므로 false 리턴)
+        System.out.println(b1 + " " + b2); // true false
         System.out.println(hset1); // [A, B, C] 출력순서가 고정X, 랜덤O
         // #2 addAll
         Set<String> hset2 = new HashSet<>();
