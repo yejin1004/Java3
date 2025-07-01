@@ -52,7 +52,7 @@ public class TreeSet2 {
         treeSet4.add(myComparableClass1);
         treeSet4.add(myComparableClass2);
         for(MyComparableClass mcc : treeSet4) {
-            System.out.println(mcc.data1);
+            System.out.println(mcc.data1); // 2 3
         }
 
         //#4. MyClass 객체 크기 비교 방법 #2.

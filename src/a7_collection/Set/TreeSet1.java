@@ -6,10 +6,19 @@ import java.util.TreeSet;
 
 public class TreeSet1 {
     public static void main(String[] args) {
+        /* TreeSet의 특징
+            - 내부에 레드-블랙 트리를 가지고 있음
+            - 트리의 가장 중요한 특징은 자료의 추가와 동시에 정렬이 발생한다는 것
+            - 자동정렬 지원 (기본적으로 오름차순 (1,2,3,4,5...))
+            - 중복판단이 compareTo(), compare()
+            - 중복판단시 동일여부와 크기 비교를 같이 수행!!
+            - 자동정렬기능이 있고 추가,삭제,검색 영역의 성능도 매우 준수함
+         */
+
         TreeSet<Integer> treeSet = new TreeSet<>();
         // TreeSet에 정수데이터를 자동으로 추가
         for (int i=50; i>0; i-=2) {
-            treeSet.add(i);
+            treeSet.add(i); // 50 48 46 ....
         }
         // 50,48,46... 순서로 데이터입력했지만 자동으로 정렬되어 출력됨
         System.out.println(treeSet); // [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 44, 46, 48, 50]
