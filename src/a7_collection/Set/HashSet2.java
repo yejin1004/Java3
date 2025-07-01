@@ -75,6 +75,15 @@ class D {
 
 public class HashSet2 {
     public static void main(String[] args) {
+        /* HashSet의 특징
+            - 자료의 저장은 해시테이블(=아파트우편함)로 관리
+            - 자료를 hashcode()라는 메서드에 입력하면 해시코드(=동/호수)가 반환됨
+            - 해시코드는 일반적으로 유일성을 보장하며 이 해시코드에 따라 특정한
+            메모리위치(=버킷)에 저장하는 방식
+            - 추가,삭제,검색 매우 빠름 (정렬은 불가)
+            - 저장하고 검색할 위치(=버킷)를 단번에 계산할 수 있음
+         */
+
         // #1. A클래스 오버라이드 안함
         Set<A> hset1 = new HashSet<>();
         A a1 = new A(3);
