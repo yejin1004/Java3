@@ -4,6 +4,12 @@ import java.util.Stack;
 
 public class Stack1 {
     public static void main(String[] args) {
+        /* 스택 (Stack)
+            - 후입선출 (Last In First Out)
+            - 카드의 덱(deck)이 가장 마지막 위에 놓여진 카드가 먼저 선택되는 것과
+                같은 방식으로 실행되는 자료구조
+            - 브라우저의 히스토리저장 또는 재귀함수 처리에 사용됨
+         */
         Stack<Integer> stack = new Stack<>();
         // #1. push 입력
         System.out.println("#1");
