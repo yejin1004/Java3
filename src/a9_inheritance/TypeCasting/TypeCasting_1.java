@@ -30,9 +30,12 @@ public class TypeCasting_1 {
         // #3. B->A 업캐스팅
         A value3 = new B();
         System.out.println(value3.a); // 3
+        // System.out.println(value3.b); // 오류 b를 참조할 수 없음
+        // 업캐스팅으로 B객체내의 A영역을 참조하게되어서 b를 읽을 수 없음
         value3.methodA(); // A 클래스
         // #4. A->B 다운캐스팅
         B value4 = (B)value3;
+        System.out.println(value4.a); // 3
         System.out.println(value4.b); // 4
         value4.methodB(); // B 클래스
     }
