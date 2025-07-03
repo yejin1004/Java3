@@ -46,7 +46,12 @@ class Student {
     }
 
     public void setGrade(int grade) {
-        this.grade = grade;
+        // 예외처리 (getter,setter를 사용하는 이유)
+        if (grade >= 1 && grade <= 6) {
+            this.grade = grade;
+        }else {
+            System.out.println("잘못된입력입니다. [1-6]");
+        }
     }
 
     @Override
@@ -66,6 +71,8 @@ public class Example1 {
         //s1.grade = 2; // 오류 grade가 private이므로 참조 불가
         s1.setGrade(2);
         System.out.println(s1); // Student{studentId='steve1234', name='Steve Jones', grade=2}
+        s1.setGrade(100); // 잘못된입력입니다. [1-6]
+
 
     }
 }
