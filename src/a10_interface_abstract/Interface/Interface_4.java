@@ -14,5 +14,19 @@ public class Interface_4 {
             }
         };
         value1.abc(); // 익명이너클래스를 이용한 인터페이스 객체생성
+        C1 value2 = new C1(){
+            @Override
+            public void abc() {
+                System.out.println("익명이너클래스를 이용한 인터페이스 객체생성");
+            }
+        };
+        C1 value3 = new C1(){
+            @Override
+            public void abc() {
+                System.out.println("익명이너클래스를 이용한 인터페이스 객체생성");
+            }
+        };
+        value2.abc();
+        value3.abc();
     }
 }
