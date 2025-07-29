@@ -4,8 +4,11 @@ import a8_modifier.Modifier1.pack2.C;
 import a8_modifier.Modifier1.pack2.D;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class JdbcExample1 {
     // #1. 데이터베이스 연결 정보
@@ -105,6 +108,35 @@ public class JdbcExample1 {
         return departments;
     }
 
+    // 조인쿼리 - 아래 key를 가지는 직원 정보 조회
+    // 이름, 입사일, 부서명
+    // 특정 클래스의 인스턴스에 담을 수 없으므로 Map<key,value>형태로 만듬
+    public List<Map<String, Object>> getEmployees() {
+        List<Map<String, Object>> employees = new ArrayList<>();
+        String query = "select 이름, 입사일, 부서명 from 사원 "
+                + "inner join 부서 on 사원.부서번호 = 부서.부서번호";
+        try (
+                Connection connection = DriverManager.getConnection(
+                        URL, USER, PASSWORD);
+                PreparedStatement ps = connection.prepareStatement(query);
+                ResultSet resultSet = ps.executeQuery()) {
+            while (resultSet.next()) {
+                Map<String, Object> employee = new HashMap<>();
+                employee.put("이름", resultSet.getString("이름"));
+                //employee.put("입사일", resultSet.getString("입사일"));
+                // 문자열로 받아서 LocalDate로 변환
+                // 단, "YYYY-MM-DD" 형태의 문자열이어야만 함
+                LocalDate date = LocalDate.parse(resultSet.getString("입사일"));
+                employee.put("입사일", date);
+                employee.put("부서명", resultSet.getString("부서명"));
+                employees.add(employee);
+            }
+        }catch (SQLException e) {
+            System.out.println("에러처리");
+        }
+        return employees;
+    }
+
     public static void main(String[] args) {
         // 데이터베이스 연결
         // sql 쿼리를 전송해서 응답을 받음
@@ -116,5 +148,7 @@ public class JdbcExample1 {
         System.out.println(allCustomers);
         List<Department> allDepartments = repository.getAllDepartments();
         System.out.println(allDepartments);
+        List<Map<String,Object>> employees = repository.getEmployees();
+        System.out.println(employees);
     }
 }
