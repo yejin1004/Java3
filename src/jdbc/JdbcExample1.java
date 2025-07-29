@@ -1,6 +1,7 @@
 package jdbc;
 
 import a8_modifier.Modifier1.pack2.C;
+import a8_modifier.Modifier1.pack2.D;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -83,6 +84,27 @@ public class JdbcExample1 {
         return customers;
     }
 
+    // 모든 부서정보를 조회
+    public List<Department> getAllDepartments() {
+        List<Department> departments = new ArrayList<>();
+        String query = "select * from 부서";
+        try (
+            Connection connection = DriverManager.getConnection(
+                    URL, USER, PASSWORD);
+            PreparedStatement ps = connection.prepareStatement(query);
+            ResultSet resultSet = ps.executeQuery()) {
+            while (resultSet.next()) {
+                Department department = new Department();
+                department.setDepartmentId(resultSet.getString("부서번호"));
+                department.setDepartmentName(resultSet.getString("부서명"));
+                departments.add(department);
+            }
+        }catch (SQLException e) {
+            System.out.println("에러처리");
+        }
+        return departments;
+    }
+
     public static void main(String[] args) {
         // 데이터베이스 연결
         // sql 쿼리를 전송해서 응답을 받음
@@ -92,5 +114,7 @@ public class JdbcExample1 {
         System.out.println(foundCustomer);
         List<Customer> allCustomers = repository.getAllCustomers();
         System.out.println(allCustomers);
+        List<Department> allDepartments = repository.getAllDepartments();
+        System.out.println(allDepartments);
     }
 }
